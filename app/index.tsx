@@ -1,20 +1,28 @@
 import { Pressable, Text, View } from "react-native";
-import { useAudioPlayer } from "expo-audio";
+import { AudioPlayer, useAudioPlayer } from "expo-audio";
 
-const vineBoomAudio = require("./assets/boom.mp3");
-const taskmasterThemeAudio = require("./assets/tm_theme.mp3");
+const sounds = {
+  vineBoom: require("./assets/boom.mp3"),
+  taskmasterTheme: require("./assets/tm_theme.mp3"),
+};
 
 export default function Index() {
-  const vineBoomPlayer = useAudioPlayer(vineBoomAudio);
-  function vineBoom() {
-    vineBoomPlayer.seekTo(0);
-    vineBoomPlayer.play();
-  }
+  const vineBoomPlayer = useAudioPlayer(sounds.vineBoom);
+  const taskmasterThemePlayer = useAudioPlayer(sounds.taskmasterTheme);
 
-  const taskmasterThemePlayer = useAudioPlayer(taskmasterThemeAudio);
-  function taskmasterTheme() {
-    taskmasterThemePlayer.seekTo(0);
-    taskmasterThemePlayer.play();
+  const players: Record<string, AudioPlayer> = {
+    vineBoom: vineBoomPlayer,
+    taskmasterTheme: taskmasterThemePlayer,
+  };
+
+  function playSound(sound: string) {
+    const player = players[sound];
+    if (!player) {
+      console.error(`ERR: Player for "${sound}" not found.`);
+      return;
+    }
+    player.seekTo(0);
+    player.play();
   }
 
   return (
@@ -25,10 +33,10 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Pressable onPress={vineBoom}>
+      <Pressable onPress={() => playSound("vineBoom")}>
         <Text>Vine Boom</Text>
       </Pressable>
-      <Pressable onPress={taskmasterTheme}>
+      <Pressable onPress={() => playSound("taskmasterTheme")}>
         <Text>Taskmaster Theme</Text>
       </Pressable>
     </View>
