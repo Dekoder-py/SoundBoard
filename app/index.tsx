@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text, View, StyleSheet } from "react-native";
 import { AudioPlayer, useAudioPlayer } from "expo-audio";
 
 const sounds = {
@@ -26,19 +26,36 @@ export default function Index() {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Pressable onPress={() => playSound("vineBoom")}>
-        <Text>Vine Boom</Text>
+    <View style={styles.container}>
+      <Pressable
+        style={styles.soundButton}
+        onPress={() => playSound("vineBoom")}
+      >
+        <Text style={styles.soundText}>Vine Boom</Text>
       </Pressable>
-      <Pressable onPress={() => playSound("taskmasterTheme")}>
-        <Text>Taskmaster Theme</Text>
+      <Pressable
+        style={styles.soundButton}
+        onPress={() => playSound("taskmasterTheme")}
+      >
+        <Text style={styles.soundText}>Taskmaster Theme</Text>
       </Pressable>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#1e1e2e",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  soundButton: {
+    margin: 20,
+    padding: 50,
+    backgroundColor: "#45475a",
+  },
+  soundText: {
+    color: "#cdd6f4",
+  },
+});
