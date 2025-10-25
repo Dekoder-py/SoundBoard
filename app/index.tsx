@@ -45,17 +45,28 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: 60,
     backgroundColor: "#1e1e2e",
     flex: 1,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   soundButton: {
     margin: 20,
-    padding: 50,
+    padding: 30,
     backgroundColor: "#45475a",
+    borderRadius: 15,
+    width: 150,
+    height: 100,
+    justifyContent: "center",
   },
   soundText: {
     color: "#cdd6f4",
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

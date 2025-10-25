@@ -4,13 +4,8 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "#313244",
-        },
-        headerTintColor: "#cdd6f4",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
+        headerShown: false,
+        contentStyle: { backgroundColor: "#1e1e2e" },
       }}
     >
       <Stack.Screen name="index" options={{ title: "Sound Board" }} />
