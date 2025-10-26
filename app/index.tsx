@@ -1,4 +1,4 @@
-import { Image, Pressable, Text, View, StyleSheet } from "react-native";
+import { Image, Pressable, View, StyleSheet } from "react-native";
 import { AudioPlayer, useAudioPlayer } from "expo-audio";
 
 const sounds = {
