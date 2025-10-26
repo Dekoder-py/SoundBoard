@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "SoundBoard",
-    "slug": "SoundBoard",
+    "slug": "soundboard",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -50,6 +50,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "aa6f2118-e24e-4668-a07f-3ecf4efd2c84"
+      }
+    },
+    "owner": "dekoder-py"
   }
 }
