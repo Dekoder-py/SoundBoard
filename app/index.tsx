@@ -1,4 +1,4 @@
-import { Pressable, Text, View, StyleSheet } from "react-native";
+import { Image, Pressable, Text, View, StyleSheet } from "react-native";
 import { AudioPlayer, useAudioPlayer } from "expo-audio";
 
 const sounds = {
@@ -37,25 +37,34 @@ export default function Index() {
         style={styles.soundButton}
         onPress={() => playSound("vineBoom")}
       >
-        <Text style={styles.soundText}>Vine Boom</Text>
+        <Image
+          source={require("./assets/rock.png")}
+          style={styles.buttonImage}
+        />
       </Pressable>
       <Pressable
         style={styles.soundButton}
         onPress={() => playSound("taskmasterTheme")}
       >
-        <Text style={styles.soundText}>Taskmaster Theme</Text>
+        <Image
+          source={require("./assets/tm_logo.png")}
+          style={styles.buttonImage}
+        />
       </Pressable>
       <Pressable
         style={styles.soundButton}
         onPress={() => playSound("foxIntro")}
       >
-        <Text style={styles.soundText}>Fox Intro</Text>
+        <Image
+          source={require("./assets/fox.png")}
+          style={styles.buttonImage}
+        />
       </Pressable>
-      <Pressable
-        style={styles.soundButton}
-        onPress={() => playSound("shaw")}
-      >
-        <Text style={styles.soundText}>Shaw!</Text>
+      <Pressable style={styles.soundButton} onPress={() => playSound("shaw")}>
+        <Image
+          source={require("./assets/hornet.png")}
+          style={styles.buttonImage}
+        />
       </Pressable>
     </View>
   );
@@ -74,11 +83,8 @@ const styles = StyleSheet.create({
   },
   soundButton: {
     margin: 20,
-    padding: 30,
     backgroundColor: "#45475a",
     borderRadius: 15,
-    width: 160,
-    height: 100,
     justifyContent: "center",
   },
   soundText: {
@@ -86,5 +92,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  buttonImage: {
+    margin: 10,
+    padding: 6,
+    width: 100,
+    height: 100,
   },
 });
