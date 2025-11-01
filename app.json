@@ -2,7 +2,7 @@
   "expo": {
     "name": "SoundBoard",
     "slug": "soundboard",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "https://a.slack-edge.com/production-standard-emoji-assets/14.0/apple-large/1f509@2x.png",
     "scheme": "soundboard",

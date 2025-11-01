@@ -1,5 +1,17 @@
 import { Image, Pressable, View, StyleSheet } from "react-native";
-import { AudioPlayer, useAudioPlayer } from "expo-audio";
+import { AudioPlayer, useAudioPlayer, setAudioModeAsync } from "expo-audio";
+import { useEffect } from "react";
+
+useEffect(() => {
+  (async () => {
+    await setAudioModeAsync({
+      playsInSilentMode: true,
+      shouldPlayInBackground: true,
+      interruptionModeAndroid: "duckOthers",
+      interruptionMode: "mixWithOthers",
+    });
+  })();
+}, []);
 
 const sounds = {
   vineBoom: require("./assets/boom.mp3"),
