@@ -39,25 +39,25 @@ struct ContentView: View {
             Button {
                 playSound(sound: "boom")
             } label: {
-                Image("rock")
+                Image("rock").resizable()
             }
             
             Button {
                 playSound(sound: "shaw")
             } label: {
-                Image("hornet")
+                Image("hornet").resizable()
             }
             
             Button {
                 playSound(sound: "tm_theme")
             } label: {
-                Image("tm_logo")
+                Image("tm_logo").resizable()
             }
             
             Button {
                 playSound(sound: "foxTheme")
             } label: {
-                Image("fox")
+                Image("fox").resizable()
             }
         }
         .padding()
